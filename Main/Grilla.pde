@@ -4,8 +4,8 @@ class Grilla {
   Casillero [][] matriz;
   Grilla(int tm, int ancho, int alto) {
     this.tm=tm;
-    this.cantidadCasillerosX=floor(ancho/this.tm);
-    this.cantidadCasillerosY=floor(alto/this.tm);
+    this.cantidadCasillerosX=floor(ancho/this.tm)-1;
+    this.cantidadCasillerosY=floor(alto/this.tm)-1;
     this.matriz=new Casillero [this.cantidadCasillerosY][this.cantidadCasillerosX];
     for (int i=0; i<this.matriz.length; i++) {
       for (int j=0; j<this.matriz[i].length; j++) {
@@ -14,8 +14,8 @@ class Grilla {
     }
   }
   public void mostrar(){
-    for (int i=0; i<this.matriz.length; i++) {
-      for (int j=0; j<this.matriz[i].length; j++) {
+    for (int i=1; i<this.matriz.length; i++) {
+      for (int j=1; j<this.matriz[i].length-1; j++) {
         this.matriz[i][j].dibujar();
       }
     }

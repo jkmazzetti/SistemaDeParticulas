@@ -6,7 +6,7 @@ class Obstaculo {
   }
   void crear(boolean activado) {
     int x, y;
-    if (keyPressed && activado) {
+    if (mousePressed && activado) {
       x=mouseX;
       y=mouseY;
       for (int i=0; i<this.grilla.matriz.length; i++) {
@@ -35,7 +35,7 @@ class Obstaculo {
     }
   }
   public void borrar(boolean activado) {
-    if (activado) {
+    if (activado && mousePressed) {
       int c=0;
       Casillero auxA[]=new Casillero [this.obs.length];
       for (int i=0; i<this.obs.length; i++) {

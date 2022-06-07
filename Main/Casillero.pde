@@ -10,27 +10,23 @@ class Casillero {
   }
 
   public void dibujar() {
+    noStroke();
     if (this.tipo=="vacio") {
       relleno=color(0);
       fill(relleno);
-      stroke(255,50);
-      rectMode(CENTER);
-      rect(this.x, this.y, this.tm, this.tm);
+      stroke(255);
+      strokeWeight(2);
     }
     if (this.tipo=="obs") {
       relleno=color(175);
-      fill(relleno, 20);
-      noStroke();
-      rectMode(CENTER);
-      rect(this.x, this.y, this.tm, this.tm);
+      fill(relleno);
     }
     if (this.tipo=="arena") {
-      relleno=color(200, 150, 0);
-      fill(relleno);
-      noStroke();
+      fill(240,100,0); 
+    }
+    
       rectMode(CENTER);
       rect(this.x, this.y, this.tm, this.tm);
-    }
   }
   public void borrar(){
    if(dist(mouseX,mouseY,this.x, this.y)<tm && this.tipo=="arena"){

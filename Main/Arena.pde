@@ -11,7 +11,7 @@ class Arena {
       x=mouseX;
       y=mouseY;
       for (int i=1; i<this.grilla.matriz.length-1; i++) {
-        for (int j=1; j<this.grilla.matriz.length-1; j++) {
+        for (int j=1; j<this.grilla.matriz[i].length-1; j++) {
           if (dist(x, y, this.grilla.matriz[i][j].x, this.grilla.matriz[i][j].y)<=this.grilla.matriz[i][j].tm/2) {
             if (this.granos[0]==null) {
               this.granos[0]=new Casillero(this.grilla.matriz[i][j].x, this.grilla.matriz[i][j].y, this.grilla.matriz[i][j].tm, "arena");
@@ -48,7 +48,6 @@ class Arena {
         avanzar=true;
         avanzarDerecha=true;
         avanzarIzquierda=true;
-        this.alcanzoLimite=false;
         if (py<this.grilla.cantidadCasillerosY-1) {
           for (int j=0; j<obs.length; j++) {
             if (obs[j]!=null) {
@@ -80,7 +79,7 @@ class Arena {
             this.granos[i].y=this.grilla.matriz[py][px].y;
             this.granos[i].x=this.grilla.matriz[py][px].x;
           } else {
-            if (this.granos[i].y==200) {
+            if (this.granos[i].y<200) {
               this.alcanzoLimite=true;
             }
             this.grilla.matriz[py][px].tipo="arena";
@@ -88,7 +87,7 @@ class Arena {
             this.granos[i].x=this.grilla.matriz[py][px].x;
           }
         }else {
-          if (this.granos[i].y==200) {
+          if (this.granos[i].y<200) {
             this.alcanzoLimite=true;
           }
           this.grilla.matriz[py][px].tipo="arena";
