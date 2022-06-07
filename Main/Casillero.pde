@@ -13,7 +13,7 @@ class Casillero {
     if (this.tipo=="vacio") {
       relleno=color(0);
       fill(relleno);
-      noStroke();
+      stroke(255,50);
       rectMode(CENTER);
       rect(this.x, this.y, this.tm, this.tm);
     }
