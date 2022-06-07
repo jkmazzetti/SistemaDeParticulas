@@ -14,15 +14,13 @@ class Casillero {
     if (this.tipo=="vacio") {
       relleno=color(0);
       fill(relleno);
-      stroke(255);
-      strokeWeight(2);
     }
     if (this.tipo=="obs") {
       relleno=color(175);
       fill(relleno);
     }
     if (this.tipo=="arena") {
-      fill(240,100,0); 
+      fill(240,100,0,120); 
     }
     
       rectMode(CENTER);

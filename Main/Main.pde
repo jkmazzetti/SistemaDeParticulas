@@ -6,11 +6,11 @@ Boton borrarObs,crearAre,crearObs;
 
 
 void setup(){
- background(0);
+ background(0,1);
  ancho=400;
  alto=500;
  size(400,1000);
- grilla=new Grilla(25,ancho, alto);
+ grilla=new Grilla(10,ancho, alto);
  arena=new Arena(grilla);
  obstaculo=new Obstaculo(grilla);
  borrarObs=new Boton(60,700,100,"borrar");

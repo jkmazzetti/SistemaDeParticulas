@@ -10,9 +10,9 @@ class Arena {
     if (mousePressed && activado) {
       x=mouseX;
       y=mouseY;
-      for (int i=1; i<this.grilla.matriz.length-1; i++) {
+      for (int i=0; i<this.grilla.matriz.length-1; i++) {
         for (int j=1; j<this.grilla.matriz[i].length-1; j++) {
-          if (dist(x, y, this.grilla.matriz[i][j].x, this.grilla.matriz[i][j].y)<=this.grilla.matriz[i][j].tm/2) {
+          if (dist(x, y, this.grilla.matriz[i][j].x, this.grilla.matriz[i][j].y)-this.grilla.matriz[i][j].tm/1.025<this.grilla.matriz[i][j].tm/2) {
             if (this.granos[0]==null) {
               this.granos[0]=new Casillero(this.grilla.matriz[i][j].x, this.grilla.matriz[i][j].y, this.grilla.matriz[i][j].tm, "arena");
             } else {
